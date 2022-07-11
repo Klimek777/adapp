@@ -1,7 +1,6 @@
 # adapp
 
-A new Flutter project.
-
+Diet app.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
