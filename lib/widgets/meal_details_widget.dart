@@ -9,6 +9,7 @@ class MealDetails extends StatefulWidget {
 
 class _MealDetailsState extends State<MealDetails> {
   bool Ingredients = false;
+  String bullet = "\u2022 ";
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -258,7 +259,7 @@ class _MealDetailsState extends State<MealDetails> {
                         height: 20,
                       ),
                       Container(
-                        width: 240,
+                        width: 270,
                         decoration: BoxDecoration(
                             color: Colors.grey[300],
                             borderRadius: BorderRadius.circular(20)),
@@ -323,7 +324,7 @@ class _MealDetailsState extends State<MealDetails> {
                                       padding: const EdgeInsets.all(12.0),
                                       child: RichText(
                                         text: TextSpan(
-                                          text: 'Reciepe',
+                                          text: 'Instructions',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               color: Ingredients
@@ -342,8 +343,28 @@ class _MealDetailsState extends State<MealDetails> {
                         height: 20,
                       ),
                       Ingredients
-                          ? Text('Recipe',
-                              style: TextStyle(color: Colors.black))
+                          ? Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    RichText(
+                                      text: TextSpan(
+                                        text: 'Instructions',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                RichText(
+                                    text: TextSpan(
+                                        text:
+                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                                        style: TextStyle(color: Colors.black)))
+                              ],
+                            )
                           : Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -386,111 +407,40 @@ class _MealDetailsState extends State<MealDetails> {
                                 ),
                                 Column(
                                   children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey[200]!,
-                                            spreadRadius: 1,
-                                            blurRadius: 3,
-                                            offset: Offset(0,
-                                                3), // changes position of shadow
-                                          ),
-                                        ],
-                                        borderRadius: BorderRadius.circular(20),
-                                        border: Border.all(
-                                            color: Colors.grey[300]!),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Container(
-                                                    width: 55,
-                                                    height: 55,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.all(
-                                                              Radius.circular(
-                                                                  20)),
-                                                      child: Image.network(
-                                                          'https://toppng.com/uploads/preview/brown-onion-115283502637y3hhhogtu.png'),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 5,
-                                                  ),
-                                                  RichText(
-                                                    text: TextSpan(
-                                                      text: "Onion",
-                                                      style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 20,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            RichText(
+                                              text: TextSpan(
+                                                text: bullet,
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontSize: 30),
                                               ),
-                                              Row(
-                                                children: [
-                                                  ClipRRect(
-                                                    child: Container(
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(5),
-                                                          border: Border.all(
-                                                              color:
-                                                                  Colors.blue),
-                                                        ),
-                                                        child: Icon(
-                                                          Icons.add,
-                                                          color: Colors.blue,
-                                                          size: 20,
-                                                        )),
-                                                  ),
-                                                  SizedBox(width: 10),
-                                                  RichText(
-                                                    text: TextSpan(
-                                                      text: "2",
-                                                      style: TextStyle(
-                                                          color: Colors.blue,
-                                                          fontSize: 20),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 10,
-                                                  ),
-                                                  ClipRRect(
-                                                    child: Container(
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(5),
-                                                          border: Border.all(
-                                                              color:
-                                                                  Colors.blue),
-                                                        ),
-                                                        child: Icon(
-                                                          Icons.remove,
-                                                          color: Colors.blue,
-                                                          size: 20,
-                                                        )),
-                                                  ),
-                                                ],
-                                              )
-                                            ]),
-                                      ),
-                                    ),
+                                            ),
+                                            RichText(
+                                              text: TextSpan(
+                                                  text: "Onion",
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 18)),
+                                            ),
+                                          ],
+                                        ),
+                                        RichText(
+                                            text: TextSpan(
+                                                text: "1 pcs",
+                                                style: TextStyle(
+                                                    color: Colors.black)))
+                                      ],
+                                    )
                                   ],
-                                ),
+                                )
                               ],
                             ),
                     ],
