@@ -5,6 +5,7 @@ import 'package:adapp/pages/mealplan_folder/mealplan.dart';
 import 'package:adapp/pages/recipes_folder/recipes.dart';
 import 'package:adapp/pages/shoplist_folder/shoplist.dart';
 import 'package:adapp/pages/today_folder/today.dart';
+import 'package:adapp/widgets/shopping_list_widget.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
