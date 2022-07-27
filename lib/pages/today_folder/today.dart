@@ -1,5 +1,5 @@
 import 'package:activity_ring/activity_ring.dart';
-import 'package:adapp/pages/today_folder/breakfast.dart';
+import 'package:adapp/widgets/meal_widget.dart';
 import 'package:adapp/pages/today_folder/todaysmeals.dart';
 import 'package:flutter/material.dart';
 

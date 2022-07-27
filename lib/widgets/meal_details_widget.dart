@@ -1,7 +1,31 @@
 import 'package:flutter/material.dart';
 
 class MealDetails extends StatefulWidget {
-  const MealDetails({Key? key}) : super(key: key);
+  final String image;
+  final String title;
+  final String kategoria;
+  final String opis;
+  final Map<String, int> ingreditens;
+  final String instructions;
+  final int kcal;
+  final int carbs;
+  final int protein;
+  final int fats;
+  final int minuts;
+  const MealDetails(
+      {Key? key,
+      required this.image,
+      required this.title,
+      required this.ingreditens,
+      required this.instructions,
+      required this.kategoria,
+      required this.kcal,
+      required this.opis,
+      required this.carbs,
+      required this.protein,
+      required this.fats,
+      required this.minuts})
+      : super(key: key);
 
   @override
   State<MealDetails> createState() => _MealDetailsState();
@@ -10,6 +34,7 @@ class MealDetails extends StatefulWidget {
 class _MealDetailsState extends State<MealDetails> {
   bool Ingredients = false;
   String bullet = "\u2022 ";
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,9 +51,7 @@ class _MealDetailsState extends State<MealDetails> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                      'https://media.istockphoto.com/photos/homemade-roasted-thanksgiving-day-turkey-picture-id495329828?k=20&m=495329828&s=612x612&w=0&h=P2-lvCymvQQKMB6csjEkfs5U1zM414e-V-P_27aNo7k=',
-                    ),
+                    image: NetworkImage(widget.image),
                   ),
                 ),
                 child: Padding(
@@ -101,7 +124,7 @@ class _MealDetailsState extends State<MealDetails> {
                           children: [
                             RichText(
                               text: TextSpan(
-                                text: "Śniadaniowa quesadilla",
+                                text: widget.title,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 22,
@@ -113,7 +136,7 @@ class _MealDetailsState extends State<MealDetails> {
                                 Icon(Icons.timer_outlined, color: Colors.grey),
                                 RichText(
                                     text: TextSpan(
-                                        text: '15 min',
+                                        text: widget.minuts.toString() + ' min',
                                         style: TextStyle(color: Colors.grey)))
                               ],
                             )
@@ -123,8 +146,7 @@ class _MealDetailsState extends State<MealDetails> {
                       ),
                       RichText(
                         text: TextSpan(
-                          text:
-                              'Szybkie śniadanie na kazdy budzdet domowy do zrobienia w 15 minut ',
+                          text: widget.opis,
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
@@ -159,7 +181,9 @@ class _MealDetailsState extends State<MealDetails> {
                                     ),
                                     RichText(
                                         text: TextSpan(
-                                            text: "65g carbs",
+                                            text: widget.carbs.toString() +
+                                                'g'
+                                                    ' carbs',
                                             style:
                                                 TextStyle(color: Colors.black)))
                                   ],
@@ -187,7 +211,8 @@ class _MealDetailsState extends State<MealDetails> {
                                     ),
                                     RichText(
                                         text: TextSpan(
-                                            text: "65g kcal",
+                                            text: widget.kcal.toString() +
+                                                ' kcal',
                                             style:
                                                 TextStyle(color: Colors.black)))
                                   ],
@@ -217,7 +242,9 @@ class _MealDetailsState extends State<MealDetails> {
                                     ),
                                     RichText(
                                         text: TextSpan(
-                                            text: "65g protein",
+                                            text: widget.protein.toString() +
+                                                'g' +
+                                                ' protein',
                                             style:
                                                 TextStyle(color: Colors.black)))
                                   ],
@@ -245,7 +272,9 @@ class _MealDetailsState extends State<MealDetails> {
                                     ),
                                     RichText(
                                         text: TextSpan(
-                                            text: "65g fats",
+                                            text: widget.fats.toString() +
+                                                'g' +
+                                                ' fats',
                                             style:
                                                 TextStyle(color: Colors.black)))
                                   ],
@@ -360,8 +389,7 @@ class _MealDetailsState extends State<MealDetails> {
                                 ),
                                 RichText(
                                     text: TextSpan(
-                                        text:
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                                        text: widget.instructions,
                                         style: TextStyle(color: Colors.black)))
                               ],
                             )
@@ -398,7 +426,11 @@ class _MealDetailsState extends State<MealDetails> {
                                 ),
                                 RichText(
                                   text: TextSpan(
-                                    text: "6 items",
+                                    text: widget.ingreditens.length == 1
+                                        ? widget.ingreditens.length.toString() +
+                                            ' item'
+                                        : widget.ingreditens.length.toString() +
+                                            ' items',
                                     style: TextStyle(color: Colors.grey),
                                   ),
                                 ),
@@ -415,17 +447,21 @@ class _MealDetailsState extends State<MealDetails> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
+                                            // RichText(
+                                            //   text: TextSpan(
+                                            //     text: bullet,
+                                            //     style: TextStyle(
+                                            //         color: Colors.blue,
+                                            //         fontSize: 30),
+                                            //   ),
+                                            // ),
                                             RichText(
                                               text: TextSpan(
-                                                text: bullet,
-                                                style: TextStyle(
-                                                    color: Colors.blue,
-                                                    fontSize: 30),
-                                              ),
-                                            ),
-                                            RichText(
-                                              text: TextSpan(
-                                                  text: "Onion",
+                                                  text: bullet +
+                                                      widget.ingreditens.keys
+                                                          .toList()
+                                                          .join(
+                                                              '\n\n' + bullet),
                                                   style: TextStyle(
                                                       color: Colors.black,
                                                       fontSize: 18)),
@@ -434,7 +470,10 @@ class _MealDetailsState extends State<MealDetails> {
                                         ),
                                         RichText(
                                             text: TextSpan(
-                                                text: "1 pcs",
+                                                text: widget.ingreditens.values
+                                                        .toList()
+                                                        .join(' pcs' + '\n\n') +
+                                                    ' pcs',
                                                 style: TextStyle(
                                                     color: Colors.black)))
                                       ],
