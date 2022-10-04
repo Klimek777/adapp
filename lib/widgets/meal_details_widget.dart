@@ -32,6 +32,7 @@ class MealDetails extends StatefulWidget {
 }
 
 class _MealDetailsState extends State<MealDetails> {
+  bool addedTocard = false;
   bool Ingredients = false;
   String bullet = "\u2022 ";
 
@@ -410,15 +411,37 @@ class _MealDetailsState extends State<MealDetails> {
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),
-                                    RichText(
-                                      text: TextSpan(
-                                        text: "Add all to cart",
-                                        style: TextStyle(
-                                            color: Colors.blue,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        setState(() {
+                                          addedTocard = !addedTocard;
+                                        });
+                                      },
+                                      child: addedTocard == false
+                                          ? RichText(
+                                              text: TextSpan(
+                                                text: "Add all to cart",
+                                                style: TextStyle(
+                                                    color:
+                                                        Colors.deepPurpleAccent,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            )
+                                          : RichText(
+                                              text: TextSpan(
+                                                text:
+                                                    "Successfully added to cart",
+                                                style: TextStyle(
+                                                    color:
+                                                        Colors.deepPurpleAccent,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                    )
                                   ],
                                 ),
                                 SizedBox(

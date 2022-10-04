@@ -33,10 +33,10 @@ class _TodayPageState extends State<TodayPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          RichText(text: TextSpan(text: 'Good Morning 👋')),
+                          RichText(text: TextSpan(text: '   Good Morning 👋')),
                           RichText(
                             text: TextSpan(
-                              text: 'Anna Lewandowska',
+                              text: '  Anna Lewandowska',
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                             ),

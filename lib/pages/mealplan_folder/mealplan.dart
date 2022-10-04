@@ -142,7 +142,7 @@ class _MealplanPageState extends State<MealplanPage> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            color: Colors.lightBlueAccent,
+                            color: Colors.deepPurpleAccent,
                             borderRadius: BorderRadius.all(
                               Radius.circular(20),
                             ),
@@ -154,7 +154,7 @@ class _MealplanPageState extends State<MealplanPage> {
                               text: TextSpan(
                                 text: '998/1400',
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20),
                               ),

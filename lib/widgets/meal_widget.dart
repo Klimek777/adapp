@@ -1,4 +1,5 @@
 import 'package:adapp/widgets/meal_details_widget.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CompleteMeal {
@@ -30,13 +31,13 @@ class CompleteMeal {
 
 final listOfMeals = [
   CompleteMeal(
-    'https://media.istockphoto.com/photos/homemade-roasted-thanksgiving-day-turkey-picture-id495329828?k=20&m=495329828&s=612x612&w=0&h=P2-lvCymvQQKMB6csjEkfs5U1zM414e-V-P_27aNo7k=',
-    'Śniadaniowa quesadilla',
+    'https://www.seriouseats.com/thmb/AVdCUACjl50RScwPNVRjVq-Nb4M=/1500x1125/filters:fill(auto,1)/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2017__07__20170728-sunny-side-up-eggs-vicky-wasik-d07c5480d72e49cc85689c1d6d88495e.jpg',
+    'Jajka sadzone + boczek',
     'Śniadanie',
-    'Szybkie śniadanie na kadzdy budzet domowy',
+    'Szybkie śniadanie na kadzdy budzet domowy, jajka sadzone idealne do podania z boczkiem i zapiekanym chlebkiem',
     {
-      'Onion': 1,
-      'Shit': 2,
+      'Eggs': 2,
+      'Bacon': 4,
     },
     'Lorem ipsum bla bla bla bla bla bla  ',
     200,
@@ -46,11 +47,11 @@ final listOfMeals = [
     50,
   ),
   CompleteMeal(
-    'https://staticsmaker.iplsc.com/smaker_prod_2021_10_06/2cc9f03b97a3019b6f5efaa28552ec0d-lg.jpg',
-    'Bułeczki kolacyjne',
-    'Kolacja',
-    'Bułeczki zapiekane z jajkiem',
-    {'Egs': 5, 'Paprika': 2, 'Tomatoes': 1},
+    'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/high-protein-dinners-slow-cooker-meatballs-image-5a04d02.jpg?quality=90&resize=768,574',
+    'Spaghetti z klopsikami',
+    'Obiad',
+    'Spaghetti z klopsikami i z sosem pomidorowym. Idealny i szybki obiad',
+    {'Spaghetti pasta': 5, 'Tomatoe sos': 2, 'Meat': 1},
     'Lorem ipsum bla bla bla bla bla bla  ',
     150,
     34,
@@ -63,8 +64,24 @@ final listOfMeals = [
     'Bułeczki kolacyjne',
     'Kolacja',
     'Bułeczki zapiekane z jajkiem',
-    {'Egs': 5, 'Paprika': 2, 'Tomatoes': 1},
-    'Lorem ipsum bla bla bla bla bla bla  ',
+    {
+      'Bułka': 2,
+    },
+    '''Lorem ipsum bla bla bla bla bla bla jajka smazymy, koniecznie ma masle klarowanym lub zwyklym dodaje to niepowtarzalny smak. 
+
+- jajka wczesniej wyciagamy z lodowki jesli je tam trzymamy aby osiagnely temperature pokojowa
+
+- nastepne na patelni rozpuszczamy maslo
+Lorem ipsum bla bla bla bla bla bla jajka smazymy, koniecznie ma masle klarowanym lub zwyklym dodaje to niepowtarzalny smak. 
+
+- jajka wczesniej wyciagamy z lodowki jesli je tam trzymamy aby osiagnely temperature pokojowa
+
+- nastepne na patelni rozpuszczamy maslo
+Lorem ipsum bla bla bla bla bla bla jajka smazymy, koniecznie ma masle klarowanym lub zwyklym dodaje to niepowtarzalny smak. 
+
+- jajka wczesniej wyciagamy z lodowki jesli je tam trzymamy aby osiagnely temperature pokojowa
+
+- nastepne na patelni rozpuszczamy maslo''',
     150,
     34,
     22,
@@ -175,7 +192,7 @@ class _MealWidgetState extends State<MealWidget> {
                       ),
                       Container(
                         decoration: BoxDecoration(
-                            color: Colors.lightBlue,
+                            color: Colors.deepPurpleAccent,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(30))),
                         child: Padding(
@@ -243,7 +260,7 @@ class _MealWidgetState extends State<MealWidget> {
                               ),
                               Icon(
                                 Icons.arrow_forward_ios,
-                                color: Colors.lightBlue,
+                                color: Colors.deepPurpleAccent,
                                 size: 13,
                               )
                             ],
@@ -273,7 +290,7 @@ class _MealWidgetState extends State<MealWidget> {
                               added == false
                                   ? Container(
                                       decoration: BoxDecoration(
-                                          color: Colors.lightBlue,
+                                          color: Colors.deepPurpleAccent,
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                       child: Padding(
@@ -287,7 +304,7 @@ class _MealWidgetState extends State<MealWidget> {
                                     )
                                   : Container(
                                       decoration: BoxDecoration(
-                                          color: Colors.lightBlue,
+                                          color: Colors.deepPurpleAccent,
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(20))),
                                       child: Padding(
